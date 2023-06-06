@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from './components/styled/container.styled';
+import { Container } from './styled/container.styled';
 import {
   Hstack,
   Vstack,
@@ -11,7 +11,7 @@ import {
   ThemeSelection,
   Attribution,
   AttributionA
-} from './components/styled/calc.styled';
+} from './styled/calc.styled';
 
 const Calculator = () => {
     const [theme, setTheme] = React.useState(localStorage.getItem('theme')) || 'default';
