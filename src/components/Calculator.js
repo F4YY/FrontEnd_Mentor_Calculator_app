@@ -67,13 +67,21 @@ const Calculator = () => {
 
   const handleCalculate = () => {
     try {
+      // eslint-disable-next-line no-eval
       const result = eval(displayValue);
-      const formattedResult = parseFloat(result).toFixed(3);
-      setDisplayValue(formattedResult.toString());
-    } catch (error) {
-        console.error('Error calculating result:', error);
-        setDisplayValue('Error');
+      let formattedResult;
+
+      if (Number.isInteger(result)) {
+        formattedResult = result.toString();
+      } else {
+        formattedResult = parseFloat(result).toFixed(3);
       }
+
+      setDisplayValue(formattedResult);
+    } catch (error) {
+      console.error('Error calculating result:', error);
+      setDisplayValue('Error');
+    }
   };
 
   const formatSeparatorThousands = (value) => {
