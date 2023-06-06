@@ -53,8 +53,9 @@ export const ThemeSelection = styled(Hstack)`
         color: ${props => props.theme === 'default'? 'var(--White)' : props.theme === 'light' ? 'var(--Very-dark-grayish-yellow)' : 'var(--Light-yellow)'};
         margin: 0 10px;
     }
-    input[type="range"] {
+    input[type="range"]{
         -webkit-appearance: none;
+        appearance: none;
         width: 29%;
         height: 8px;
         border-radius: 40px;
